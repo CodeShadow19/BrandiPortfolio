@@ -1,4 +1,10 @@
 @extends('layout.app')
 @section('content')
     @include('component.Banner')
+    @include('component.Features')
+    @include('component.Project')
+    @include('component.Team')
+    @include('component.Counter')
+    @include('component.Contact')
+    @include('component.Footer')
 @endsection

@@ -17,9 +17,13 @@
         <nav class="sidebar-nav">
             <ul id="sidebarnav">
                 <li class="nav-devider mt-0" style="margin-bottom: 5px"></li>
-                <li> <a href="index.html" ><span> <i class="fas fa-home"></i> </span><span class="hide-menu">Home</span></a></li>
-                <li> <a href="VisitorTable.html" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
-                <li> <a href="service.html" ><span> <i class="fas fa-globe"></i> </span><span class="hide-menu">Services</span></a></li>
+                <li> <a href="{{url('/')}}" ><span> <i class="fas fa-home"></i> </span><span class="hide-menu">Home</span></a></li>
+                <li> <a href="{{url('/visitor')}}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Visitor</span></a></li>
+                <li> <a href="{{url('/features')}}" ><span> <i class="fas fa-star-half-alt"></i> </span><span class="hide-menu">Features</span></a></li>
+                <li> <a href="{{url('/project')}}" ><span> <i class="fas fa-tasks"></i> </span><span class="hide-menu">Projects</span></a></li>
+                <li> <a href="{{url('/team')}}" ><span> <i class="fas fa-users"></i> </span><span class="hide-menu">Team</span></a></li>
+                <li> <a href="{{url('/counter')}}" ><span> <i class="fab fa-contao"></i> </span><span class="hide-menu">Counter</span></a></li>
+                <li> <a href="{{url('/contact')}}" ><span> <i class="far fa-envelope"></i> </span><span class="hide-menu">Contact</span></a></li>
             </ul>
         </nav>
     </div>
