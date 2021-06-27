@@ -70,7 +70,8 @@ span.color {
 
 body > section,
 .footer {
-	padding: 70px 0;
+    margin-top: 0;
+	padding: 20px 0;
 }
 
 .sec-title {}
@@ -632,7 +633,6 @@ label.error {
   display: block;
   margin-bottom: 10px;
 }
-
 #map_canvas {
   height: 215px;
   width: 100%;

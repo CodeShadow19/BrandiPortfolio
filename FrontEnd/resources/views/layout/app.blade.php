@@ -44,6 +44,7 @@
 		================================================== -->
 <!-- Main jQuery -->
 <script src="{{asset('js/jquery-1.11.1.min.js')}}"></script>
+    <script src="{{asset('js/axios.min.js')}}"></script>
 <!-- Single Page Nav -->
 <script src="{{asset('js/jquery.singlePageNav.min.js')}}"></script>
 <!-- Twitter Bootstrap -->

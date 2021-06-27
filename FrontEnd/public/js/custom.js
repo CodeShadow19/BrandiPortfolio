@@ -1,3 +1,71 @@
+
+/*** CONTACT FORM SEND DATA ***/
+/*$('.contactClass').on('submit',function (event){
+    event.preventDefault();
+    let formData=$(this).serializeArray();
+
+    let name=formData[0]['value'];
+    let email=formData[1]['value'];
+    let message=formData[1]['value'];
+    console.log(formData);
+
+    let url="/contactSend";
+
+    alert(name+email+message);
+});*/
+
+$('#form-submit').click(function(){
+    var name=$('#name').val();
+    var email=$('#email').val();
+    var message=$('#message').val();
+
+    //alert(name+email+message);
+
+    sendContact(name,email,message);
+});
+
+function sendContact(name,email,message){
+    if(name.length==0){
+        $('#form-submit').val("Name Empty.")
+        setTimeout(function (){
+            $('#form-submit').val('SEND MESSAGE');
+        },3000)
+    }else if(email.length==0){
+        $('#form-submit').val("Email Empty.")
+        setTimeout(function (){
+            $('#form-submit').val('SEND MESSAGE');
+        },3000)
+    }else if(message.length==0){
+        $('#form-submit').val("Message Empty.")
+        setTimeout(function (){
+            $('#form-submit').val('SEND MESSAGE');
+        },3000)
+    }else{
+        axios.post('/contactSend',{
+            name:name,
+            email:email,
+            message:message
+        }).then(function(response){
+            if(response.status==200 && response.data==1){
+                $('#form-submit').val("Message Send Success")
+                setTimeout(function (){
+                    $('#form-submit').val('SEND MESSAGE');
+                },3000)
+            }else{
+                $('#form-submit').val("Message Send Failed")
+                setTimeout(function (){
+                    $('#form-submit').val('SEND MESSAGE');
+                },3000)
+            }
+        }).catch(function(error){
+            $('#form-submit').val("Message Send Failed")
+            setTimeout(function (){
+                $('#form-submit').val('SEND MESSAGE');
+            },3000)
+        })
+    }
+}
+
 /* ========================================================================= */
 /*	Preloader
 /* ========================================================================= */
@@ -29,7 +97,7 @@ $(document).ready(function(){
 			console.log('done scrolling');
 		}
 	});
-	
+
     $(window).scroll(function () {
         if ($(window).scrollTop() > 400) {
             $("#navigation").css("background-color","#0EB493");
@@ -37,30 +105,30 @@ $(document).ready(function(){
             $("#navigation").css("background-color","rgba(16, 22, 54, 0.2)");
         }
     });
-	
+
 	/* ========================================================================= */
 	/*	Fix Slider Height
-	/* ========================================================================= */	
+	/* ========================================================================= */
 
 	var slideHeight = $(window).height();
-	
+
 	$('#slider, .carousel.slide, .carousel-inner, .carousel-inner .item').css('height',slideHeight);
 
 	$(window).resize(function(){'use strict',
 		$('#slider, .carousel.slide, .carousel-inner, .carousel-inner .item').css('height',slideHeight);
 	});
-	
-	
+
+
 	/* ========================================================================= */
 	/*	Portfolio Filtering
-	/* ========================================================================= */	
-	
-	
+	/* ========================================================================= */
+
+
     // portfolio filtering
 
     $(".project-wrapper").mixItUp();
-	
-	
+
+
 	$(".fancybox").fancybox({
 		padding: 0,
 
@@ -72,13 +140,13 @@ $(document).ready(function(){
 
 		closeClick : true,
 	});
-	
+
 	/* ========================================================================= */
 	/*	Parallax
-	/* ========================================================================= */	
-	
+	/* ========================================================================= */
+
 	$('#facts').parallax("50%", 0.3);
-	
+
 	/* ========================================================================= */
 	/*	Timer count
 	/* ========================================================================= */
@@ -95,12 +163,12 @@ $(document).ready(function(){
             })
         })
     });
-	
+
 	/* ========================================================================= */
 	/*	Back to Top
 	/* ========================================================================= */
-	
-	
+
+
     $(window).scroll(function () {
         if ($(window).scrollTop() > 400) {
             $("#back-top").fadeIn(200)
@@ -113,7 +181,7 @@ $(document).ready(function(){
             scrollTop: 0
         }, 1500, "easeInOutExpo")
     });
-	
+
 });
 
 
@@ -149,3 +217,6 @@ function initialize() {
 
 google.maps.event.addDomListener(window, "load", initialize);
 // ========== END GOOGLE MAP ========== //
+
+
+

@@ -12,4 +12,3 @@ class TeamModel extends Model
     public $keyType='int';
     public  $timestamps=false;
 }
-}

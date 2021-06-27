@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\BannerModel;
+use App\ContactModel;
 use App\CountModel;
 use App\FeaturesModel;
 use App\ProjectModel;
@@ -35,5 +36,22 @@ class HomeController extends Controller
             'TeamData'=>$TeamData,
             'CountData'=>$CountData
         ]);
+    }
+    function ContactSend(Request $request){
+        $name=$request->input('name');
+        $email=$request->input('email');
+        $message=$request->input('message');
+
+        $result=ContactModel::insert([
+           'name'=>$name,
+           'email'=>$email,
+           'message'=>$message
+        ]);
+
+        if($result==true){
+            return 1;
+        }else{
+            return 0;
+        }
     }
 }

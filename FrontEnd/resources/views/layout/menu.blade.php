@@ -32,7 +32,8 @@ Fixed Navigation
                 <li><a href="#features">Features</a></li>
                 <li><a href="#works">Work</a></li>
                 <li><a href="#team">Team</a></li>
-                <li><a href="http://google.com">Contact</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <!--<li><a href="http://google.com">Contact</a></li>-->
             </ul>
         </nav>
         <!-- /main nav -->

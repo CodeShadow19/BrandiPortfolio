@@ -12,4 +12,3 @@ class CounterModel extends Model
     public $keyType='int';
     public  $timestamps=false;
 }
-}

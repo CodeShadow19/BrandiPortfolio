@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','HomeController@HomeIndex');
+Route::post('/contactSend','HomeController@ContactSend');
+Route::get('/contactus','ContactUsController@ContactUs');
